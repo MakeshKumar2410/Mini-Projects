@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <h3>Comming Soon!</h3>
+        <h1>Our Brand New <br> Website Is On It's Way</h1>
+        <p>Subscribe for more details</p>
+
+        <form method="post" action="https://script.google.com/macros/s/AKfycbxP4e12KByDu-XsE1H0b4Z3H4kfGpTzrQm5RTYuuEyUl_R-r_WNk7ZjOi6ek18wfsrW/exec" name="contact-form">
+            <input type="email" name="Email" placeholder="Enter Your Id" required>
+            <button type="submit"><img src="send-icon.png" width="30px"></button>
+        </form>
+        <span>Thank For Subscribing!</span>
+    </div>
+    <!-- <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxZI-xf7xb_5Tv2XIcZ_AA2lPgFK1_5qNM9B9Id3NUOWADlOMsBxP8m2HqT3IEwyI8w/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script> -->
+   <script>
+    
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxP4e12KByDu-XsE1H0b4Z3H4kfGpTzrQm5RTYuuEyUl_R-r_WNk7ZjOi6ek18wfsrW/exec'
+const form = document.forms['contact-form']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+   </script>
+</body>
+</html>
