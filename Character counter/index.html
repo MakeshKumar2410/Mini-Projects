@@ -1,0 +1,43 @@
+
+
+<div class="container">
+    <h3>Text letter counter</h3>
+    <textarea id="text"></textarea>
+    <p id="count">0/200 characters</p>
+    <p id="warning"></p>
+</div>
+
+<style>
+    .container{
+        width: 200px;
+        height: 150px;
+        border: 1px solid black;
+        text-align: center;
+        padding: 20px;
+        margin-top: 200px;
+        margin-left: 500px;
+    }
+    .warning{
+        color: red;
+    }
+</style>
+
+<script>
+    var text = document.getElementById("text")
+    var count = document.getElementById("count")
+    var warning = document.getElementById("warning")
+    var max=200;
+
+    text.addEventListener("input", function(){
+        var length = text.value.length 
+        count.textContent = length + "/" + max + "characters"
+
+        if(length > max){
+            text.value = text.value.substring(0,max)
+            warning.textContent = "You reached your limit"
+        }
+        else{
+            warning.textContent = ""
+        }
+    })
+</script>
